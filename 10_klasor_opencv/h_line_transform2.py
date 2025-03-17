@@ -30,3 +30,8 @@ while True:
 
 vid.release()
 cv2.destroyAllWindows()
+
+#buradayım github
+#buradayım github
+#buradayım github
+#buradayım github
