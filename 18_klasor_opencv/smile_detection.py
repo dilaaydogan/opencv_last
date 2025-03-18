@@ -14,6 +14,7 @@ for (x,y,w,h) in faces:
     
     roi_gray = gray[x:x+w,y:y+h] 
     roi_img = img[x:x+w,y:y+h]
+    #smile_cascade.detectMultiScale() fonksiyonu ile gülümseme tespiti yapılır.
     smiles = smile_cascade.detectMultiScale(roi_gray,1.3,5)
     
 for (ex,ey,ew,eh) in smiles:

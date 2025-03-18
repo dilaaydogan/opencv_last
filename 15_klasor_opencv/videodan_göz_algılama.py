@@ -42,4 +42,3 @@ while 1:
 vid.release()
 cv2.destroyAllWindows()
 
-#aaaaaaaaaaaaaaa

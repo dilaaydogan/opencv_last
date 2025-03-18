@@ -29,14 +29,14 @@ mask = np.zeros(gray.shape, np.uint8)
 new_img = cv2.drawContours(mask,[screen], 0 , (255,255,255), -1)
 new_img = cv2.bitwise_and(img,img,mask = mask)
 
-#beyaz bölgeyi tut 
+#np.where(mask == 255) → Maskede beyaz (255) olan tüm piksellerin koordinatlarını bulur.
 (x,y) = np.where(mask == 255)
-(topx , topy) = (np.min(x), np.min(y))
-(bottomx , bottomy) = (np.max(x), np.max(y))
+(topx , topy) = (np.min(x), np.min(y)) # En üst sol köşe koordinatlarını bulur.
+(bottomx , bottomy) = (np.max(x), np.max(y)) #En alt sağ köşe koordinatlarını bulur.
 #resmi kırpmak
-cropped = gray[topx:bottomx + 1 , topy:bottomy + 1]
+cropped = gray[topx:bottomx + 1 , topy:bottomy + 1] #Bulunan koordinatlara göre sadece ilgili alanı kırpar.
 
-text = pytesseract.image_to_string(cropped,lang="eng")
+text = pytesseract.image_to_string(cropped,lang="eng") #İngilizce metinleri tanıyacak şekilde OCR motorunu çalıştırır.
 print("detected text:", text)
  
 

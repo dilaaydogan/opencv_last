@@ -5,9 +5,10 @@ blurry_img = cv2.medianBlur(img,9)  #9 → Filtre boyutudur (9x9 piksel). Daha b
 
 #9 → Filtre boyutudur (9x9 piksel). Daha büyük değerler daha fazla bulanıklık oluşturur.
 laplacian= cv2.Laplacian(blurry_img,cv2.CV_64F).var()
-print(laplacian)
+print(laplacian) #cv2.Laplacian() fonksiyonu, görüntünün kenar keskinliğini hesaplar.
 
-if laplacian < 500:
+if laplacian < 500: #Eğer Laplacian varyansı 500'den küçükse, görüntü bulanık kabul edilir.
+
     print("blurry image")
 
 

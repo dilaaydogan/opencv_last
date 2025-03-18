@@ -1,3 +1,6 @@
+
+#görüntülerde bulunan harf ve rakamları dijital metne dönüştürmek için kullanılır.
+
 from PIL import Image 
 import pytesseract
 

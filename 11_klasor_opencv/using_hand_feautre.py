@@ -10,11 +10,11 @@ def findMaxContour(contours):
     #kamera görüntüsündeki en büyük konturu belirleyerek üç temel noktasını (sol, sağ, üst) bulur ve bu noktalar arasındaki açıyı hesaplar. 
     #Eğer açı 70 dereceden büyükse ekranın köşesine mavi bir kare çizer.
 
-
+   
     max_i = 0
     max_area =0
     for i in range(len(contours)):
-        area_hand = cv2.contourArea(contours[i])
+        area_hand = cv2.contourArea(contours[i]) #cv2.contourArea() → Konturun alanını hesaplar.
         
         if max_area<area_hand:
             max_area=area_hand

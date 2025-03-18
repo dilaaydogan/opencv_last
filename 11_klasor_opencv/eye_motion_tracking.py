@@ -7,12 +7,15 @@ while 1:
     if ret is False:
         break
 
-    roi = frame[80:210,230:450]
-    rows,cols,_ = roi.shape
+    roi = frame[80:210,230:450] #, sadece göz bölgesini keser.
+    rows,cols,_ = roi.shape #Göz bölgesinin boyutları alınır
     gray = cv2.cvtColor(roi,cv2.COLOR_BGR2GRAY)
 
+    #cv2.THRESH_BINARY_INV → Siyah ve beyazı ters çevirir (göz bebeği beyaz olacak şekilde) 
     _,threshold = cv2.threshold(gray,3,255,cv2.THRESH_BINARY_INV)
     #cv2.findContours Beyaz piksellerin dış hatlarını bulur.
+    #cv2.RETR_TREE → Tüm konturları hiyerarşik olarak bulur.
+    #cv2.CHAIN_APPROX_SIMPLE → Gereksiz noktaları silerek konturları sadeleştirir.
     contours,_ = cv2.findContours(threshold,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
     #sorted içerideki değerleri sıralar
     contours = sorted(contours, key = lambda x: cv2.contourArea(x), reverse=True)

@@ -8,6 +8,7 @@ while True:
     ret,frame = vid.read()
     frame = cv2.resize(frame, (640,480))
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    #3: Minimum komşu sayısı → Tespitin güvenilir olup olmadığını belirler. Daha yüksek değer, daha az ama daha doğru tespitler yapar.
     cars = car_cascade.detectMultiScale(gray,1.3,3)
 
     for (x,y,w,h) in cars:
