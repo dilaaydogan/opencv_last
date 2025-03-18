@@ -6,7 +6,7 @@ img_median = cv2.imread("C:\\Users\\dila\\Desktop\\opencv.project\\input\\median
 img_bilateral = cv2.imread("C:\\Users\\dila\\Desktop\\opencv.project\\input\\bilteral.png")
 
 blur =cv2.blur(img_filter,(5,5))
-blur_f=cv2.filterBlur(img_filter,(5,5),cv2.BORDER_DEFAULT)
+blur_f=cv2.cv2.GaussianBlur(img_filter,(5,5),cv2.BORDER_DEFAULT)
 blur_m = cv2.medianBlur(img_median,5)
 blur_b = cv2.bilateralFilter(img_bilateral,9,95,95)
 

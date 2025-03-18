@@ -13,7 +13,7 @@ while 1:
     cv2.imshow("Frame",frame)
     cv2.imshow("Edges",edges)
 
-    if cv2.waitKey(5) & 0xFF==ord('q'):
+    if cv2.waitKey(5) & 0xFF==ord('q'):  #cv2.waitKey(5): 5 milisaniye boyunca klavyeden bir tuş girişini bekler.
         break
 
 cap.release()

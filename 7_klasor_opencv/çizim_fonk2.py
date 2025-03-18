@@ -14,8 +14,9 @@ cv2.rectangle(canvas, (20,20) , (50,50) , (0,255,0), thickness=3 )  #yeşil
 #merkez , yarıçap , renk , kalınlık
 cv2.circle(canvas, (250,250) , 100 , (0,0,255), thickness=-1)
 
-#çokgen her noktası (x,y) formatındca verilir
-points = np.array([[[110,200], [330,200], [290,220], [100,100]]], np.int32 )
+#np.array Görüntüleri kırpma, yeniden boyutlandırma, dönüştürme gibi işlemler yapılabilir.
+#çokgen her noktası (x,y) formatında verilir
+points = np.array([[[110,200], [330,200], [290,220], [100,100]]], np.int32 ) 
 #birden fazla çizgiyi birleştirme #kapalı şekil olsun diye True dedik
 cv2.polylines(canvas, [points], True, (0,0,100),5)
 

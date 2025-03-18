@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 img1=cv2.imread("C:\\Users\\dila\\Desktop\\opencv.project\\input\\coins.jpg")
 img2=cv2.imread("C:\\Users\\dila\\Desktop\\opencv.project\\input\\balls.jpg")

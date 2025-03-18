@@ -1,8 +1,9 @@
 import cv2
 
-#sondaki çakışmaları önlemek için varsayılan
+#sondaki çakışmaları önlemek için varsayılan  
+#def ifadesi fonksiyon tanımlamak için kullanılır. 
 def resizewithAspectRatio(img, width =None, height =None, inter = cv2.INTER_AREA):
-    dimension = None
+    dimension = None   #boyut
     #en başından ikinciye kadar
     (h,w) = img.shape[:2]
 
